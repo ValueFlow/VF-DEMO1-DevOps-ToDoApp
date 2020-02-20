@@ -5,7 +5,7 @@ import AuthHelper from '../AuthHelper'
 /*
   Todo list action
 */
-export const todoListAction = (filter=null) => async dispatch => {
+export const todoListAction = (filter = null) => async dispatch => {
   todosRef.on("value", snapshot => {
     var todos = [];
 
@@ -17,24 +17,24 @@ export const todoListAction = (filter=null) => async dispatch => {
 
     // Filter todos for currently logged in user
     var user = AuthHelper.getUser();
-    if(user){
+    if (user) {
       todos = todos.filter((t) => t.userId === user.email);
     }
 
-    if(filter){
+    if (filter) {
 
       // Filter by category
-      if(filter.categoryKey){
+      if (filter.categoryKey) {
         todos = todos.filter((t) => t.todoCategory === filter.categoryKey);
       }
 
       // filter by completed
-      if(filter.isCompleted===true){
+      if (filter.isCompleted === true) {
         todos = todos.filter((t) => t.isCompleted === true);
       }
 
       // filter by not completed
-      if(filter.isCompleted===false){
+      if (filter.isCompleted === false) {
         todos = todos.filter((t) => t.isCompleted === false);
       }
     }
@@ -59,11 +59,11 @@ export const todoListAllAction = () => async dispatch => {
       todos.push(item);
     });
 
-    console.log("todoListAllAction", todos)
+    //console.log("todoListAllAction", todos)
 
     // Filter todos for currently logged in user
     var user = AuthHelper.getUser();
-    if(user){
+    if (user) {
       todos = todos.filter((t) => t.userId === user.email);
     }
 
@@ -89,7 +89,7 @@ export const allTodosListAction = () => async dispatch => {
 
     // Filter todos for currently logged in user
     var user = AuthHelper.getUser();
-    if(user){
+    if (user) {
       todos = todos.filter((t) => t.userId === user.email);
     }
 
@@ -105,7 +105,7 @@ export const allTodosListAction = () => async dispatch => {
 */
 export const todoCategoriesAction = () => async dispatch => {
   categoriesRef.on("value", snapshot => {
-    
+
     var categories = [];
 
     snapshot.forEach((childSnapshot) => {
@@ -113,7 +113,7 @@ export const todoCategoriesAction = () => async dispatch => {
       item.key = childSnapshot.key;
       categories.push(item);
     });
-    
+
     dispatch({
       type: 'TODO_CATEGORIES',
       payload: categories
@@ -131,14 +131,14 @@ export const addTodoAction = (newToDo) => async dispatch => {
 /*
   Delete Todo
 */
-export const deleteTodo = (key) => async dispatch =>  {
+export const deleteTodo = (key) => async dispatch => {
   todosRef.child(key).remove();
 }
 
 /*
   Complete Todo
 */
-export const completeTodo = (key, isCompleted) => async dispatch =>  {
-  todosRef.child(key).update({isCompleted: !isCompleted})
+export const completeTodo = (key, isCompleted) => async dispatch => {
+  todosRef.child(key).update({ isCompleted: !isCompleted })
 }
 

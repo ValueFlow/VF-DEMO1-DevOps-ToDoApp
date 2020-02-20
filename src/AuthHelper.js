@@ -1,22 +1,22 @@
-class AuthHelper{
+class AuthHelper {
 
     isLoggedIn = false;
     userInfo = {};
 
-    constructor(){
+    constructor() {
         this.isLoggedIn = false;
     }
 
-    setUser = ( user) => {
-        if(user){
+    setUser = (user) => {
+        if (user) {
             this.userInfo.displayName = user.displayName;
             this.userInfo.email = user.email;
             this.userInfo.photoURL = user.photoURL;
         }
 
-        if(user){
+        if (user) {
             this.isLoggedIn = true;
-        }else{
+        } else {
             this.isLoggedIn = false;
         }
     }
