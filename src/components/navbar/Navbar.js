@@ -30,7 +30,7 @@ class Navbar extends Component {
               Hello, {user.displayName}
             </strong>
           </div>
-  
+
           <div className="pull-left">
             <a onClick={() => this.handleSignOut()} className="" href="#">
               Sign out!
@@ -39,7 +39,7 @@ class Navbar extends Component {
         </div>
 
         <span className="pull-right padding-10">
-          <img alt="..." className="img-circle" style={imageStyle} src={user.photoURL} />
+          <img alt="..." className="img-circle" style={imageStyle} src={user.photoURL ? user.photoURL : 'https://images-na.ssl-images-amazon.com/images/I/51kCuZFKLOL._SL1000_.jpg'} />
         </span>
 
       </div>

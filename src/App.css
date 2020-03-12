@@ -21,22 +21,27 @@
   color: #09d3ac;
 }
 
-.top-10{
+.top-10 {
   margin-top: 10px;
 }
 
-.pad-right-50{
+.pad-right-50 {
   padding-right: 50px;
 }
 
-.pad-top-20{
- padding-top: 20px;
+.pad-top-20 {
+  padding-top: 20px;
 }
 
-.card-body{
+.card-body {
   padding-left: 20px;
 }
 
-.left-a{
+.left-a {
   text-align: left;
+}
+
+/* Microsoft Login override */
+.firebaseui-idp-text.firebaseui-idp-text-long {
+  color: #757575
 }
