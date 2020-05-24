@@ -65,7 +65,7 @@ class TodoCreate extends Component {
     return (
       <div className='card left-a'>
         <div className='card-header'>
-          <h5>Create Add a todo </h5>
+          <h5>Add a new todo </h5>
         </div>
         <div className='pad-right-50 pad-top-20 card-body left-a'>
           <form action='post' method='post' onSubmit={this.addTodos}>
