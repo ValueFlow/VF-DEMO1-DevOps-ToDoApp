@@ -13,9 +13,9 @@ code {
 }
 
 /*
-  Make the header yellow for testing!
+  Make the header blueish for testing!
 */
 
-/* .bg-light {
-  background-color: yellow !important;
-} */
+.bg-light {
+  background-color: lightblue !important;
+}
